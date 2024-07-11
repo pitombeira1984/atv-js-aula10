@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculo IMC</title>
+</head>
+<body>
+  <h1>Calculo IMC</h1>
+
+  <label for="peso">Digite o Peso</label>  
+  <input type="number" name="peso" id="peso" placeholder="Peso(kg)">
+  <label for="altura">Digite Altura</label>  
+  <input type="number" name="altura" id="altura" placeholder="Altura(m)">
+  <button id="button" type="button">Calcular IMC</button>
+  <p>Resultado:<span id="resultado"></span></p>
+
+  <script>
+    document.getElementById('button').addEventListener('click',function(){
+
+      const peso = parseFloat(document.getElementById('peso').value);
+      const altura = parseFloat(document.getElementById('altura').value);
+      const imc = (peso/(altura**2)).toFixed(2);
+      if(imc <= 18.4){
+        document.getElementById('resultado').textContent = `O seu imc é ${imc}, então Abaixo do Peso`;
+    }
+      else if(imc >= 18.5 && imc <= 24.9){
+        document.getElementById('resultado').textContent = `O seu imc é ${imc}, então Peso Normal`;
+    }
+      else {
+        document.getElementById('resultado').textContent = `O seu imc é ${imc}, então Acima do Peso`;
+    }
+
+    })
+  </script>
+</body>
+</html>

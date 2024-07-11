@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somador de Números em Array</title>
+</head>
+<body>
+  <h1>Somador de Números em Array</h1>
+
+  <input type="text" id="entradaNumeros" placeholder="Digite os números separados por vírgula">
+  <button id="button" type="button">Somar</button>
+  <p id="resultado"></p>
+
+  <script>
+    document.getElementById('button').addEventListener('click',function(){
+
+      const numerosString = document.getElementById('entradaNumeros').value;
+      const numeros = numerosString.split(',').map(Number);
+      const soma = numeros.reduce((acumulador, atual) => acumulador + atual, 0);
+      document.getElementById('resultado').innerHTML = `A soma dos números é: ${soma}`;
+
+    })
+  </script>
+</body>
+</html>

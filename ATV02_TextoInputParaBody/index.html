@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label for="text">Digite um texto:</label>
+        <input type="text" name="text" id="text">
+        <button id="button" type="button">Enviar</button>
+    </form>
+    <script>
+        document.getElementById('button').addEventListener('click', function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do formulário
+            
+            const novoElemento = document.createElement('p');
+            const text = document.getElementById('text').value;
+            novoElemento.textContent = text;
+            
+            document.body.appendChild(novoElemento); // Adiciona o novo parágrafo ao corpo do documento
+        });
+    </script>
+</body>
+</html>
